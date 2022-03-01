@@ -1,0 +1,10 @@
+{% extends "office/settings/base.html" %}
+
+{% load i18n %}
+
+{% block title %}{% trans "Audit Log" %}{% endblock %}
+
+{% block settings_content %}
+{% include "common/log.html" %}
+{% include "office/pagination.html" %}
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "office/mails/base.html" %}
+{% load i18n %}
+{% load bootstrap4 %}
+{% load static %}
+{% load formset_tags %}
+
+{% block title %}{% trans "Sent Mails" %} :: {{ block.super }}{% endblock %}
+
+{% block mail_content %}
+    {% include "office/mails/sent_mails_part.html" %}
+    {% include "office/pagination.html" %}
+{% endblock %}

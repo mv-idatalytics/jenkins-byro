@@ -1,0 +1,10 @@
+{% extends "office/member/base.html" %}
+{% load i18n %}
+
+{% block title %}{{ block.super }} :: {% trans "Finance" %}{% endblock %}
+
+{% block member_content %}
+
+{% include "office/member/finance_table.html" %}
+{% include "office/pagination.html" %}
+{% endblock %}

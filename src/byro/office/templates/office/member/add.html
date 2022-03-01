@@ -1,0 +1,27 @@
+{% extends "office/base_headline.html" %}
+{% load bootstrap4 %}
+{% load i18n %}
+{% load static %}
+
+{% block headline %}{% trans "Add Member …" %}{% endblock %}
+
+{% block content %}
+
+{{ name_config|json_script:"name-config" }}
+
+{% if form.fields %}
+    <form method="post">
+        {% csrf_token %}
+        {% bootstrap_form form layout='horizontal' %}
+        <button class="btn btn-success" type="submit">{% trans "Save" %}</button>
+    </form>
+{% else %}
+    <div class="alert alert-danger">
+        {% blocktrans trimmed %}
+            Please configure the fields you want to display in your member registration form.
+        {% endblocktrans %}
+        <a href="{% url "office:settings.registration" %}">{% trans "here!" %}</a>
+    </div>
+{% endif %}
+<script type="text/javascript" src="{% static "office/registration.js" %}"></script>
+{% endblock %}

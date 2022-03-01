@@ -1,0 +1,17 @@
+include byro.example.cfg
+include byro.docker.cfg
+include Dockerfile
+include docker-compose.yml
+include README.docker.md
+include install_local_plugins.sh
+include local/.gitkeep
+recursive-include byro *.py
+recursive-include byro/locale *
+recursive-include byro/static *
+recursive-include byro/common/templates *
+recursive-include byro/office/templates *
+recursive-include byro/public/templates *
+recursive-exclude tests *
+global-exclude *.py[co]
+global-exclude __pycache__
+exclude local_settings.py

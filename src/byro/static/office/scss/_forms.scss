@@ -1,0 +1,77 @@
+.login-form {
+    form {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    button {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 4px;
+    }
+}
+
+form .form-group {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.member-form-card {
+    margin-bottom: 14px;
+}
+.inline-form {
+    display: flex;
+    flex-direction: row;
+
+    div, button {
+        margin: 4px;
+    }
+}
+.table-column-small {
+    width: 10%;
+}
+.table-column-medium {
+    width: 25%;
+}
+.table-column-large {
+    width: 35%;
+}
+.offset-9 {
+    margin-left: 75%;
+    button.btn {
+        margin-left: 0 !important;
+    }
+}
+.question-option-input {
+    .form-group {
+        margin: 0;
+        display: flex;
+        flex-direction: row;
+        flex-basis: content;
+
+        label {
+            padding-top: 21px;
+            font-weight: bold;
+            width: 250px;
+        }
+
+        .form-control {
+            width: 250px;
+            margin: 8px;
+        }
+    }
+}
+.i18n-form-group input[lang] {
+  background: no-repeat 10px center;
+  padding-left: 34px;
+}
+.i18n-form-group textarea[lang] {
+  background: no-repeat 10px 10px;
+  padding-left: 34px;
+}
+.i18n-form-group input[lang=de], .i18n-form-group textarea[lang=de] {
+  background-image: url('/static/office/img/flags/de.png');
+}
+.i18n-form-group input[lang=en], .i18n-form-group textarea[lang=en] {
+  background-image: url('/static/office/img/flags/en.png');
+}

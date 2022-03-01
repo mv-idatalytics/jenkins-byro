@@ -1,0 +1,201 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.alert-error {
+    @extend .alert-danger;
+}
+#page-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+}
+.navbar {
+    color: $brand-primary;
+    background-color: $offwhite !important;
+    border-bottom: 4px $brand-primary solid;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    a {
+        color: $gray-800;
+    }
+    ul.navbar-nav {
+        display: flex;
+        flex-direction: row;
+
+        li {
+            padding: 0 8px;
+        }
+    }
+}
+.sidebar {
+    background-color: $gray-lightest;
+    width: 250px;
+    font-size: 14px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    min-height: 85vh;
+    border-right: 1px solid $gray-lighter;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    z-index: 1;
+
+    .has-children {
+        display: flex;
+        flex-direction: row;
+        a {
+          flex-grow: 1;
+        }
+        .arrow {
+          flex-grow: 0;
+          width: 50px;
+          border: none;
+          display: flex;
+          justify-content: center;
+          border-bottom: 1px solid $gray-light;
+          i {padding-top: 4px;}
+        }
+    }
+
+    .nav-link {
+        color: $gray-800;
+        text-decoration: none;
+        border-bottom: 1px solid $gray-light;
+
+        &:hover {
+            background-color: $brand-lightest;
+        }
+        .fa {
+            padding-right: 5px;
+        }
+        &.nav-link-second-level {
+            padding-left: 2.6em;
+        }
+        &.active {
+            background-color: $brand-lightest;
+        }
+    }
+
+    > .nav-link, .nav-link-inner {
+        > .fa {
+            min-width: 40px;
+            text-align: right;
+        }
+    }
+
+    .nav-fold {
+        .collapse, .collapsing {
+            padding-left: 40px;
+        }
+    }
+}
+.pending-mails {
+    background-color: #FF6E40;
+    padding: 4px;
+    border-radius: 20%;
+    color: white;
+    margin-left: 4px;
+    font-weight: bold;
+}
+#page-content {
+    background: $white;
+    flex-grow: 1;
+    display: flex;
+    padding: 20px 40px;
+
+    a.log-link {
+        font-size: 75%;
+        text-decoration: none;
+        cursor: help;
+        color: inherit;
+    }
+    a.log-link:hover {
+        text-decoration: underline;
+        color: $brand-primary;
+    }
+}
+.nav-pills {
+    border-bottom: $gray-light solid 1px;
+    margin-bottom: 16px;
+}
+footer {
+    margin-top: 30px;
+    font-size: 11px;
+    text-align: center;
+}
+
+.log_entry {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    padding-left: 3em;
+    .le-icon {
+        margin-left: -2em;
+        display: inline-block;
+        min-width: 2em;
+        text-align: center;
+        margin-right: 0.2em;
+    }
+    h5 {
+        margin-bottom: 0.1rem;
+        display: inline-block;
+        min-width: 25%;
+    }
+    dl.row, dd {
+        margin-bottom: 0;
+    }
+}
+#transaction-table {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    #header, .tr {
+        display: flex;
+        flex-direction: row;
+        border-top: 1px solid #dae0e4;
+        .amount {
+            width: 10%;
+        }
+        .date, .category {
+            width: 20%;
+        }
+        .purpose {
+            width: 50%;
+        }
+        > div {
+            padding: 0.3rem;
+            vertical-align: bottom;
+        }
+    }
+    #header {
+        border-bottom: 2px solid #dae0e4;
+        font-weight: bold;
+    }
+    .tr {
+
+    }
+    .balance {
+        border: 2px solid black;
+        margin-top: 3px;
+        min-height: 50px;
+        content: "  ";
+        position: relative;
+        &.negative {
+            border-color: #c60009;
+        }
+        &:before {
+            content: attr(data-amount);
+            position: absolute;
+            right: 0px;
+            margin-right: -120px;
+            margin-top: 15px;
+            text-decoration: underline double;
+        }
+        &.negative:before {
+            color: #c60009;
+        }
+        .empty {
+            text-align: center;
+            margin-top: 8px;
+        }
+    }
+}

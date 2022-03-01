@@ -1,0 +1,23 @@
+{% extends "office/mails/base.html" %}
+{% load i18n %}
+{% load bootstrap4 %}
+{% load static %}
+{% load formset_tags %}
+
+{% block title %}{% trans "Mail Template" %} :: {{ block.super }}{% endblock %}
+
+{% block mail_content %}
+<form method='post'>
+    {% csrf_token %}
+    <div class="card member-form-card">
+        <div class="card-header">
+            {{ template.subject | default:_("New template") }}
+        </div>
+        <div class="card-body">
+            {% bootstrap_form form layout='horizontal' %}
+            <div class="card-body">
+                <button class="btn btn-info" type="submit">Save</button>
+            </div>
+        </div>
+</form>
+{% endblock %}

@@ -1,0 +1,55 @@
+.dashboard-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin-left: -5px;
+    margin-right: -5px;
+}
+.dashboard-block {
+    flex: 1 0 auto;
+    align-self: stretch;
+    padding: 15px 5px;
+    margin: 5px;
+    min-height: 160px;
+    width: 340px;
+    background: $brand-lightest;
+    &:hover {
+        text-decoration: none;
+    }
+
+    h1 {
+        display: block;
+        opacity: 0.5;
+        padding: 10px 0 10px;
+        text-align: center;
+        font-size: 30px;
+    }
+    .dashboard-description {
+        display: block;
+        text-align: center;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+    &.block-warning {
+        background: $brand-warning;
+    }
+    &.block-danger {
+        border: $brand-danger 5px solid;
+        h1 {
+            color: $brand-danger;
+            opacity: 1;
+        }
+    }
+}
+
+.page-item.page-link-inactive .page-link:hover {
+    background-color: inherit;
+    cursor: inherit;
+}
+#member-actions {
+    display: flex;
+    justify-content: flex-end;
+    .btn {
+        margin-left: 8px;
+    }
+}
